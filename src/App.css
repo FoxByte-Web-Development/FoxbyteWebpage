@@ -1,0 +1,621 @@
+.swiper-pagination {
+  display: none;
+}
+.hover-animation {
+  position: relative;
+  color: #333333;
+  text-decoration: none;
+}
+
+.hover-animation:hover {
+  color: #333333;
+}
+
+.hover-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hover-animation:hover::before {
+  transform: scaleX(1);
+}
+@media screen and (max-width: 768px) {
+  .hover-animation::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #333333;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+}
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border-radius: 20px;
+  background: transparent;
+  color: #212121;
+  border: none;
+  font-weight: 600;
+  border: 2px solid #333333;
+  text-transform: capitalize;
+  transition: 0.5s all;
+}
+
+.button:hover {
+  background-color: #d85d1f;
+  border: none;
+  color: #fff;
+}
+
+.card {
+  background: transparent;
+  border-radius: 0.4em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(250, 250, 250) 0.1px solid;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+/* cards */
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.cards .card1 {
+  height: 400px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.1);
+  max-width: 230px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s ease;
+  margin: 0 10px;
+}
+.cards .card1:before {
+  height: 190px;
+  width: calc(100% + 1250px);
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    rgba(216, 65, 17, 1) 0%,
+    rgba(192, 79, 22, 1) 51%,
+    rgba(255, 132, 0, 1) 100%
+  );
+  border-radius: 4px 4px 100% 100%;
+  transition: all 0.4s ease-out;
+  top: 0;
+}
+.cards .card1 .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  background-image: url("https://rafaelalvucas.github.io/assets/icons/misc/cross.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+.cards .card1 .close:hover {
+  background-size: 100%;
+  opacity: 0.8;
+}
+.cards .card .arrow {
+  display: none;
+}
+.cards .card1 article {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.cards .card1 article h2 {
+  color: white;
+  margin: 0;
+  padding: 30px 20px 10px 20px;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+.cards .card1 article .title {
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 0.8px;
+  transition: all 0.4s ease;
+}
+.cards .card1 article .desc {
+  padding: 10px 30px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  color: #666;
+  height: 90px;
+  transition: all 0.4s ease-out;
+}
+.cards .card1 article .pic {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: 20px 0;
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.3);
+  transition: all 0.6s ease;
+}
+.cards .card1 article .pic img {
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.cards .card1 .actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  z-index: 1;
+}
+.cards .card1 .actions .btn {
+  border: 0;
+  background-color: transparent;
+  box-sizing: border-box;
+  height: 36px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: all 0.6s ease-in-out;
+  cursor: pointer;
+  color: rgba(216, 65, 17, 1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: rgba(68, 129, 235, 0.08);
+}
+
+.cards .card1 .actions .btn.clicked:before {
+  opacity: 0.3;
+  height: 100%;
+}
+.cards .card1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+.cards .card1:hover:before {
+  height: 100%;
+  border-radius: 4px;
+}
+.cards .card1:hover .desc {
+  color: white;
+}
+.cards .card1:hover .pic {
+  box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+.cards .card1:hover .pic img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.cards .card1.closed {
+  min-width: 120px;
+  max-width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+.cards .card1.closed .title,
+.cards .card1.closed .desc,
+.cards .card1.closed .actions,
+.cards .card1.closed .close {
+  display: none;
+}
+.cards .card1.closed h2 {
+  padding: 0;
+  height: 100%;
+  transform: rotate(-90deg);
+  width: 440px;
+  z-index: 2;
+  transition: all 0.6s ease;
+}
+.cards .card1.closed .pic {
+  border-radius: 100%;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: -20px;
+  margin: 0;
+  box-shadow: 0;
+  transition: all 0.6s ease;
+}
+.cards .card1.closed .pic img {
+  object-fit: cover;
+  height: 100%;
+  transform: translateY(20px);
+}
+.cards .card1.closed .pic:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  transition: all 0.4s ease;
+  transform: translateY(20px);
+}
+.cards .card1.closed:before {
+  height: 100%;
+  border-radius: 4px;
+}
+.cards .card1.closed .arrow {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  bottom: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  background-image: url("https://rafaelavlucas.github.io/assets/icons/misc/expand.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.2s ease;
+}
+.cards .card1.closed:hover .arrow {
+  background-size: 100%;
+  opacity: 0.6;
+}
+/* SLider */
+
+#carousel {
+  position: relative;
+  height: 280px;
+  width: 810px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 40px;
+  z-index: 1000;
+}
+.arrow-right {
+  left: 780px;
+}
+.item {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s,
+    background-color 1s;
+}
+.level-2 {
+  height: 74px;
+  width: 74px;
+  line-height: 150px;
+  left: 650px;
+  margin-top: 25px;
+}
+.level-1 {
+  height: 74px;
+  width: 74px;
+  line-height: 180px;
+  left: 500px;
+  margin-top: 10px;
+}
+.level0 {
+  height: 74px;
+  width: 74px;
+  line-height: 200px;
+  left: 330px;
+}
+.level1 {
+  height: 74px;
+  width: 74px;
+  line-height: 180px;
+  margin-top: 10px;
+  left: 180px;
+}
+.level2 {
+  height: 74px;
+  width: 74px;
+  line-height: 150px;
+  margin-top: 25px;
+  left: 50px;
+}
+.left-enter {
+  opacity: 0;
+  left: -60px;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+}
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: 50px;
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  margin-top: 25px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+.left-leave {
+  opacity: 1;
+  left: 650px;
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  margin-top: 25px;
+}
+.left-leave.left-leave-active {
+  left: 780px;
+  opacity: 0;
+  height: 120px;
+  line-height: 120px;
+  margin-top: 40px;
+  width: 90px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+.right-enter {
+  opacity: 0;
+  left: 760px;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+}
+.right-enter.right-enter-active {
+  left: 650px;
+  opacity: 1;
+  height: 150px;
+  margin-top: 25px;
+  line-height: 150px;
+  width: 110px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+.right-leave {
+  left: 50px;
+  height: 150px;
+  opacity: 1;
+  margin-top: 25px;
+  line-height: 150px;
+  width: 110px;
+}
+.right-leave.right-leave-active {
+  left: -60px;
+  opacity: 0;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+    line-height 1s;
+}
+.noselect {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  transition: opacity 0.3s;
+}
+
+.item.active .text {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  #carousel {
+    position: relative;
+    height: 280px;
+    width: 310px;
+    margin: auto 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 468px) {
+  .arrow {
+    width: 16px;
+    height: 16px;
+    margin-top: 20px;
+  }
+  .arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  .arrow-right {
+    left: 340px;
+  }
+  .arrow-left {
+    left: 5px;
+  }
+  .item {
+    font-size: 20px;
+  }
+  .level-2 {
+    height: 30px;
+    width: 30px;
+    line-height: 150px;
+    left: 30px;
+    margin-top: 10px;
+  }
+  .level-1 {
+    height: 30px;
+    width: 30px;
+    line-height: 180px;
+    left: 295px;
+    margin-top: 10px;
+  }
+  .level0 {
+    height: 30px;
+    width: 30px;
+    line-height: 200px;
+    left: 250px;
+    margin-top: 10px;
+  }
+  .level1 {
+    height: 30px;
+    width: 30px;
+    line-height: 130px;
+    margin-top: 10px;
+    left: 180px;
+  }
+  .level2 {
+    height: 30px;
+    width: 30px;
+    line-height: 150px;
+    margin-top: 10px;
+    left: 100px;
+  }
+  .left-enter {
+    opacity: 0;
+    left: -30px;
+    height: 120px;
+    width: 30px;
+    line-height: 120px;
+    margin-top: 40px;
+  }
+  .left-enter.left-enter-active {
+    opacity: 1;
+    left: 20px;
+    height: 150px;
+    width: 50px;
+    line-height: 150px;
+    margin-top: 25px;
+    transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+      line-height 1s;
+  }
+  .left-leave {
+    opacity: 1;
+    left: 650px;
+    height: 150px;
+    width: 110px;
+    line-height: 150px;
+    margin-top: 25px;
+  }
+  .left-leave.left-leave-active {
+    left: 780px;
+    opacity: 0;
+    height: 120px;
+    line-height: 120px;
+    margin-top: 40px;
+    width: 90px;
+    transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+      line-height 1s;
+  }
+  .right-enter {
+    opacity: 0;
+    left: 760px;
+    height: 120px;
+    width: 90px;
+    line-height: 120px;
+    margin-top: 40px;
+  }
+  .right-enter.right-enter-active {
+    left: 650px;
+    opacity: 1;
+    height: 150px;
+    margin-top: 25px;
+    line-height: 150px;
+    width: 110px;
+    transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+      line-height 1s;
+  }
+  .right-leave {
+    left: 50px;
+    height: 150px;
+    opacity: 1;
+    margin-top: 25px;
+    line-height: 150px;
+    width: 110px;
+  }
+  .right-leave.right-leave-active {
+    left: -60px;
+    opacity: 0;
+    height: 120px;
+    width: 90px;
+    line-height: 120px;
+    margin-top: 40px;
+    transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s,
+      line-height 1s;
+  }
+}
+
+/* Navbar.css */
+@keyframes highlight {
+  0% {
+    background-color: #8484e3;
+  }
+  50% {
+    background-color: #8383fc;
+  }
+  100% {
+    background-color: #8383fc;
+  }
+}
+
+.active1 {
+  animation: highlight 1s ease-in-out;
+}

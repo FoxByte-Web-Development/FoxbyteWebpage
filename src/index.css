@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+.line {
+  height: 8px;
+  width: 300px;
+  background-color: #ccc; /* gray color for the line */
+  border-radius: 34px;
+}
+
+.line::before {
+  content: "";
+  display: block;
+  width: 60%; /* wider red half */
+  height: 100%;
+  background: linear-gradient(90deg, #d84111 0%, #f06407 100%);
+  border-radius: 34px;
+}
+/* 2nd separator */
+.separator1 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.separator1::before,
+.separator1::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #fff;
+}
+
+.separator1:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.separator1:not(:empty)::after {
+  margin-left: 0.25em;
+}
+.dot1 {
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+/* select button */
+/* new */
+
+.hover-rotate {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+#ul-sobrenosotros {
+  text-decoration: none;
+  width: 240px;
+  padding: 0;
+  transform-origin: center;
+}
+
+#ul-sobrenosotros:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+#ul-sobrenosotros:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar {
+  display: flex;
+  font-size: 16px;
+  margin-top: 3%;
+  margin-left: 6%;
+}
+
+.list-menu {
+  display: flex;
+}
+
+.lista-nav {
+  display: flex;
+}
+
+.lista-nav > ul {
+  text-decoration: none;
+}
+
+.lista-nav > ul:hover {
+  text-decoration: underline;
+}
+
+.opciones-nav {
+  display: flex;
+  margin-left: 2rem;
+  padding-right: 2%;
+}
+
+.dropdown {
+  padding: 11px 28px;
+  border-radius: 28.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #333333;
+  background: #333333;
+  position: relative;
+  font-size: 18px;
+  perspective: 1000px;
+  z-index: 100;
+}
+
+.dropdown:hover {
+  background: #414141;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown_menu li {
+  display: block;
+}
+
+.dropdown_menu {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  perspective: 1000px;
+  z-index: -1;
+}
+
+.dropdown_menu li {
+  display: none;
+  color: white;
+  background-color: #333333;
+  padding: 10px 14px;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.dropdown_menu li:hover {
+  background-color: #414141;
+}
+
+/* Using a for loop in CSS is not possible, so the styles have to be written manually */
+.dropdown_item-1 {
+  transform-origin: top center;
+  animation: rotateX 300ms 60ms ease-in-out forwards;
+}
+.dropdown_item-2 {
+  transform-origin: top center;
+  animation: rotateX 300ms 120ms ease-in-out forwards;
+}
+.dropdown_item-3 {
+  transform-origin: top center;
+  animation: rotateX 300ms 180ms ease-in-out forwards;
+}
+.dropdown_item-4 {
+  transform-origin: top center;
+  animation: rotateX 300ms 240ms ease-in-out forwards;
+}
+.dropdown_item-5 {
+  transform-origin: top center;
+  animation: rotateX 300ms 300ms ease-in-out forwards;
+}
+
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+#boton-esp {
+  border-radius: 28.5px 28.5px 0px 0px;
+  padding-top: 30%;
+}
+
+#boton-ing {
+  border-radius: 0px 0px 28.5px 28.5px;
+}
+
+#img-world {
+  margin-right: 1rem;
+}
+
+.botones-idiomas {
+  display: flex;
+  margin-left: 0.8rem;
+}
+
+#icono-idioma {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.hover-rotate .arrow-idioma {
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1105px) {
+  .hover-rotate {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    top: 60px;
+    left: -35px;
+  }
+}
